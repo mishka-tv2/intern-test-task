@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="selenium" parallel="false" verbose="1">
+
+    <listeners>
+        <listener class-name="dk.tv2.automation.selenium.tv2play.CustomListener" />
+    </listeners>
+
+    <test name="Test Landing Page - Firefox" preserve-order="true">
+        <parameter name="Browser" value="Firefox" />
+        <parameter name="URL" value="http://play.tv2.dk" />
+
+        <classes>
+            <class name="dk.tv2.automation.selenium.tv2play.TestLandingPage">
+                <methods>
+                    <include name="testCreateUser" />
+                    <include name="testLogIn" />
+                    <include name="testViewPackages" />
+                    <include name="testGoToContent" /> 
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
